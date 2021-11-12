@@ -2,8 +2,11 @@
   <app-sidemenu class="wrapper-sidemenu"></app-sidemenu>
   <div class="wrapper-content">
     <app-menu></app-menu>
-    <div class="row mt-5">
-      <app-task class="col-12, col-md-6, col-xl-4, d-flex"></app-task>
+
+    <div class="row m-5">
+      <div class="col-12">
+        <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+      </div>
     </div>
   </div>
 </div>
