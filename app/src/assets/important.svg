@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="35" height="34" viewBox="0 0 35 34">
+  <defs>
+    <linearGradient id="linear-gradient" x1="0.148" x2="0.5" y2="0.5" gradientUnits="objectBoundingBox">
+      <stop offset="0" stop-color="#00a2ff"/>
+      <stop offset="1" stop-color="#005eef"/>
+    </linearGradient>
+  </defs>
+  <rect id="Rectangle_15" data-name="Rectangle 15" width="35" height="34" rx="7" fill="url(#linear-gradient)"/>
+  <path id="star-regular" d="M40.9,6.881l-5.872-.856L32.4.7A1.287,1.287,0,0,0,30.1.7L27.473,6.025,21.6,6.881a1.287,1.287,0,0,0-.711,2.195l4.248,4.14-1,5.848A1.285,1.285,0,0,0,26,20.418l5.253-2.761L36.5,20.418a1.286,1.286,0,0,0,1.865-1.355l-1-5.848,4.248-4.14A1.287,1.287,0,0,0,40.9,6.881ZM35.295,12.54l.953,5.563-5-2.625-5,2.625.953-5.563L23.164,8.6l5.587-.812,2.5-5.064,2.5,5.064,5.587.812Z" transform="translate(-13.5 7.013)" fill="#fff"/>
+</svg>

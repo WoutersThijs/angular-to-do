@@ -1,7 +1,19 @@
-<app-sidemenu></app-sidemenu>
-<div class="wrapper">
-  <h1>To-do</h1>
-  <div class="row mt-5">
-    <app-task class="col-12, col-md-6, col-xl-4, d-flex"></app-task>
+<div class="wrapper open">
+  <app-sidemenu class="wrapper-sidemenu"></app-sidemenu>
+  <div class="wrapper-content">
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+      <div class="container-fluid">
+
+        <button type="button" id="sidebarCollapse" class="btn btn-info">
+          <i class="fas fa-align-left"></i>
+          <span>Toggle Sidebar</span>
+        </button>
+
+      </div>
+    </nav>
+    <h1>To-do</h1>
+    <div class="row mt-5">
+      <app-task class="col-12, col-md-6, col-xl-4, d-flex"></app-task>
+    </div>
   </div>
 </div>
