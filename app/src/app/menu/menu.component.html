@@ -1,18 +1,15 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-  <a class="navbar-brand" routerLink="/">To Do</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-  </button>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+  <div class="logo-details d-flex align-items-center justify-content-center">
+    <a href="#ddd"><i class="far fa-sun icon pr-2" id="sidebarCollapse"></i></a>
+    <div class="logo_name p-2">Today</div>
+  </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav mr-auto">
-          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-              <a class="nav-link" routerLink="/">Home <span class="sr-only">(current)</span></a>
-          </li>
-          <li class="nav-item" routerLinkActive="active" [routerLinkActiveOptions]="{ exact: true }">
-              <a class="nav-link" routerLink="/article">Article</a>
-          </li>
-      </ul>
+    <div class="d-flex align-items-center ml-auto">
+      <form class="form-inline my-2 my-lg-0 mr-4">
+        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+      </form>
+      <img src="/assets/profile_pic_temp.png" alt="Profile picture" id="profile_pic" class="img-fluid">
+    </div>
   </div>
 </nav>
