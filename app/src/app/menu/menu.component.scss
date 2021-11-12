@@ -1,3 +1,17 @@
-.navbar-brand{
-  font-weight: 700;
+nav{
+  padding: 0.75rem 2rem;
+  box-shadow: 0 0 35px 0 rgba(154,161,171,.15);
+
+  .icon {
+    background-color: rgba(0,94,239,1);
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-size: 1.75rem;
+  }
+
+  #profile_pic{
+    width: 2rem !important;
+    height: 100%;
+    border-radius: 50%;
+  }
 }
