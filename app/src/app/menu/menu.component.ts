@@ -12,4 +12,13 @@ export class MenuComponent implements OnInit {
   ngOnInit(): void {
   }
 
+  toggleSidemenu(){
+    if($('.wrapper').hasClass('open')){
+      $('.wrapper').removeClass('open');
+      $('.wrapper').addClass('closed');
+    } else {
+      $('.wrapper').removeClass('closed');
+      $('.wrapper').addClass('open');
+    }
+  }
 }
