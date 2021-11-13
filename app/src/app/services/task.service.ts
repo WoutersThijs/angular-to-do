@@ -11,24 +11,17 @@ export class TaskService {
   getTasks(): Task[] {
     let tasks: Task[] = [];
 
-    let task1: Task = {
-      id: 1,
-      name: "Angular Project",
-      description: 'To-do app maken. Zie canvas.',
-      deadline: new Date(Date.now()),
-      complete: false
-    };
+    for(let i = 15; i > 0; i--){
+      let task: Task = {
+        id: 1,
+        name: "Angular Project " + i.toString(),
+        description: 'To-do app maken. Zie canvas.',
+        deadline: new Date(Date.now()),
+        complete: false
+      };
 
-    let task2: Task = {
-      id: 2,
-      name: "APT Project",
-      description: 'Microservices event applicatie',
-      deadline: new Date(Date.now()),
-      complete: false
-    };
-
-    tasks.push(task1);
-    tasks.push(task2);
+      tasks.push(task);
+    }
 
     return tasks;
   }
