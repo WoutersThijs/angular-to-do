@@ -9,6 +9,8 @@ import { TasklistComponent } from './tasklist/tasklist.component';
 import { TaskComponent } from './task/task.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -20,7 +22,8 @@ import { SidemenuComponent } from './sidemenu/sidemenu.component';
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent]
