@@ -10,6 +10,7 @@ import { TaskComponent } from './task/task.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 
 import { HttpClientModule } from '@angular/common/http';
+import { TaskDetailComponent } from './task-detail/task-detail.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from '@angular/common/http';
     HomeComponent,
     TasklistComponent,
     TaskComponent,
-    SidemenuComponent
+    SidemenuComponent,
+    TaskDetailComponent
   ],
   imports: [
     BrowserModule,

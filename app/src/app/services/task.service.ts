@@ -1,28 +1,22 @@
 import { Injectable } from '@angular/core';
 import { Task } from '../interfaces/task';
 
+import { HttpClient } from '@angular/common/http';
+import { Observable, timer } from 'rxjs';
+import { switchMap } from 'rxjs/operators';
+
 @Injectable({
   providedIn: 'root'
 })
 export class TaskService {
+  constructor(private httpClient: HttpClient) {
+  }
 
-  constructor() { }
+  getTasks(): Observable<Task[]> {
+    return timer(1, 3000).pipe(switchMap(() => this.httpClient.get<Task[]>("http://localhost:3000/tasks")));
+  }
 
-  getTasks(): Task[] {
-    let tasks: Task[] = [];
-
-    for(let i = 15; i > 0; i--){
-      let task: Task = {
-        id: 1,
-        name: "Angular Project " + i.toString(),
-        description: 'To-do app maken. Zie canvas.',
-        deadline: new Date(Date.now()),
-        complete: false
-      };
-
-      tasks.push(task);
-    }
-
-    return tasks;
+  getTaskById(id: number): Observable<Task> {
+    return this.httpClient.get<Task>("http://localhost:3000/tasks/" + id);
   }
 }
