@@ -11,14 +11,5 @@ export class SidemenuComponent implements OnInit {
   constructor() { }
 
   ngOnInit(): void {
-    $('#sidebarCollapse').on('click', function(){
-      if($('.wrapper').hasClass('open')){
-        $('.wrapper').removeClass('open');
-        $('.wrapper').addClass('closed');
-      } else {
-        $('.wrapper').removeClass('closed');
-        $('.wrapper').addClass('open');
-      }
-    })
   }
 }
