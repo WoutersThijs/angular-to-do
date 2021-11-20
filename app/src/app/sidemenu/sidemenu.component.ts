@@ -1,5 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import $ from 'jquery'
+import { List } from '../interfaces/list';
+import { Observable } from 'rxjs';
+import $ from 'jquery';
+import { Router } from '@angular/router';
+import { ListService } from '../services/list.service';
 
 @Component({
   selector: 'app-sidemenu',
@@ -8,17 +12,15 @@ import $ from 'jquery'
 })
 export class SidemenuComponent implements OnInit {
 
-  constructor() { }
+  lists$: Observable<List[]> = new Observable<List[]>();
+
+  constructor(private listService: ListService, private router: Router) { }
 
   ngOnInit(): void {
-    $('#sidebarCollapse').on('click', function(){
-      if($('.wrapper').hasClass('open')){
-        $('.wrapper').removeClass('open');
-        $('.wrapper').addClass('closed');
-      } else {
-        $('.wrapper').removeClass('closed');
-        $('.wrapper').addClass('open');
-      }
-    })
+    this.lists$ = this.listService.getLists();
+  }
+
+  showTasks(id: number) {
+    this.router.navigate(['/task', id]);
   }
 }

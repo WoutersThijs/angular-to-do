@@ -3,9 +3,9 @@
   <div class="wrapper-content">
     <app-menu></app-menu>
 
-    <div class="row m-5">
+    <div class="row">
       <div class="col-12">
-        <app-task *ngFor="let task of tasks" [task]="task"></app-task>
+        <app-task *ngFor="let task of (tasks$ | async)" [task]="task"></app-task>
       </div>
     </div>
   </div>
