@@ -16,7 +16,7 @@ export class TaskService {
     return timer(1, 3000).pipe(switchMap(() => this.httpClient.get<Task[]>("http://localhost:3000/tasks")));
   }
 
-  getTaskById(id: number): Observable<Task> {
-    return this.httpClient.get<Task>("http://localhost:3000/tasks/" + id);
+  getTasksByList(listID: number): Observable<Task[]> {
+    return timer(1, 3000).pipe(switchMap(() => this.httpClient.get<Task[]>("http://localhost:3000/tasks?list_id=" + listID.toString())));
   }
 }
