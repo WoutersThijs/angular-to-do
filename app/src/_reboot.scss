@@ -34,6 +34,7 @@
    text-align: left;
    background-color: #EBF3FF !important;
    overflow-x: hidden;
+   overflow-y: overlay;
  }
 
  [tabindex="-1"]:focus:not(:focus-visible) {

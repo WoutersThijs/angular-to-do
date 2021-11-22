@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { List } from '../interfaces/list';
-import { Observable } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import $ from 'jquery';
 import { Router } from '@angular/router';
 import { ListService } from '../services/list.service';
+import { FormControl, FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-sidemenu',
@@ -11,8 +12,14 @@ import { ListService } from '../services/list.service';
   styleUrls: ['./sidemenu.component.scss']
 })
 export class SidemenuComponent implements OnInit {
+  errorMessage: string = '';
 
   lists$: Observable<List[]> = new Observable<List[]>();
+  postList$: Subscription = new Subscription();
+
+  listForm = new FormGroup({
+    name: new FormControl(''),
+  });
 
   constructor(private listService: ListService, private router: Router) { }
 
@@ -22,5 +29,16 @@ export class SidemenuComponent implements OnInit {
 
   showTasks(id: number) {
     this.router.navigate(['/task', id]);
+  }
+
+  onSubmit(): void {
+    this.postList$ = this.listService.postList(this.listForm.value).subscribe(result => {
+      this.router.navigate(['/task', result.id]);
+      this.lists$ = this.listService.getLists();
+      $('#name').val('')
+    },
+    error => {
+      this.errorMessage = error.message;
+    });
   }
 }
