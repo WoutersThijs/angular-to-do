@@ -13,6 +13,7 @@
 }
 
 :host(.wrapper-sidemenu) {
+  overflow-y: visible;
   position: fixed;
   left: 0;
   top: 0;
@@ -63,6 +64,26 @@
   ul#custom{
     a{
       padding: 1rem 2rem;
+    }
+  }
+}
+
+.new_list_wrapper{
+  margin: 1.75rem 2rem;
+
+  .new_list{
+    width: 100%;
+    background: none;
+    border: none;
+    color: white;
+    padding-left: 0.4rem;
+
+    &::placeholder{
+      color: white;
+    }
+
+    &:focus-visible{
+      outline: none;
     }
   }
 }

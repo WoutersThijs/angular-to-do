@@ -37,9 +37,12 @@
     </a>
   </li>
   <li>
-    <a>
+    <div class="d-flex new_list_wrapper">
       <img src="assets/plus.svg" alt="today" class="mr-4">
-      <span class="links_name ml-2">New list</span>
-    </a>
+      <form (ngSubmit)="onSubmit()" [formGroup]="listForm">
+        <input class="new_list" placeholder="New list" type="text" formControlName="name" id="name"/>
+        <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
+      </form>
+    </div>
   </li>
 </ul>
