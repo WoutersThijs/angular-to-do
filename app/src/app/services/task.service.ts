@@ -37,4 +37,8 @@ export class TaskService {
 
     return this.httpClient.put<Task>("http://localhost:3000/tasks/" + taskID, task, {headers: headers});
   }
+
+  deleteTask(taskID: number): Observable<Task> {
+    return this.httpClient.delete<Task>("http://localhost:3000/tasks/" + taskID);
+  }
 }
