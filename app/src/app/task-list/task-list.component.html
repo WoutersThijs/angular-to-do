@@ -1,0 +1,23 @@
+<div class="alert alert-danger" role="alert" *ngIf="errorMessage">
+  {{errorMessage}}
+</div>
+<button type="button" class="btn btn-success addBtn" (click)="add(list_id)"><i class="fas fa-plus"></i> Add new status</button>
+<table class="table" *ngIf="tasks && tasks.length > 0">
+  <thead>
+  <tr>
+    <th scope="col">Name</th>
+    <th scope="col">Active</th>
+    <th scope="col">Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <tr *ngFor="let task of tasks">
+    <td>{{task.name}}</td>
+    <td><i *ngIf="task.complete" class="fas fa-check"></i><i *ngIf="!task.complete" class="fas fa-times"></i></td>
+    <td>
+      <button type="button" class="btn btn-success" (click)="edit(task.id)"><i class="fas fa-edit"></i></button>
+      <button type="button" class="btn btn-danger" (click)="delete(task.id)"><i class="far fa-trash-alt"></i></button>
+    </td>
+  </tr>
+  </tbody>
+</table>

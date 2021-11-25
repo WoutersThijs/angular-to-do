@@ -23,12 +23,8 @@
   ],
   "tasks": [
     {
-      "id": 1,
-      "list_id": 1,
-      "name": "Angular project",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": false
+      "name": "qsdf",
+      "id": 1
     },
     {
       "id": 2,
@@ -50,14 +46,6 @@
       "id": 4,
       "list_id": 1,
       "name": "Flutter mobile app",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": false
-    },
-    {
-      "id": 5,
-      "list_id": 1,
-      "name": "Dummy task 5",
       "description": "some comment",
       "deadline": "2021-11-13",
       "complete": false
@@ -197,6 +185,50 @@
       "description": "some comment",
       "deadline": "2021-11-13",
       "complete": false
+    },
+    {
+      "name": "Test",
+      "description": "Test",
+      "deadline": "2000-08-08",
+      "complete": null,
+      "id": 12
+    },
+    {
+      "name": "Test",
+      "description": "Test",
+      "deadline": "2021-12-05",
+      "complete": null,
+      "id": 13
+    },
+    {
+      "name": "Test",
+      "description": "Test",
+      "deadline": "2021-11-26",
+      "complete": null,
+      "id": 14
+    },
+    {
+      "name": "Thijs Wouters",
+      "description": "Test",
+      "deadline": "2021-11-26",
+      "complete": null,
+      "listID": 1,
+      "id": 15
+    },
+    {
+      "name": "Test",
+      "description": "Test",
+      "deadline": "2021-11-27",
+      "complete": null,
+      "listID": 1,
+      "id": 16
+    },
+    {
+      "name": "twotwo",
+      "description": "two",
+      "deadline": "3000-05-05",
+      "complete": null,
+      "id": 20
     }
   ],
   "profile": {

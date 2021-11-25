@@ -28,12 +28,12 @@ export class SidemenuComponent implements OnInit {
   }
 
   showTasks(id: number) {
-    this.router.navigate(['/task', id]);
+    this.router.navigate(['/tasks', id]);
   }
 
   onSubmit(): void {
     this.postList$ = this.listService.postList(this.listForm.value).subscribe(result => {
-      this.router.navigate(['/task', result.id]);
+      this.router.navigate(['/tasks', result.id]);
       this.lists$ = this.listService.getLists();
       $('#name').val('')
     },
