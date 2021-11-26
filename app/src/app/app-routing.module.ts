@@ -6,10 +6,10 @@ import { TaskFormComponent } from './task-form/task-form.component';
 import { TaskListComponent } from './task-list/task-list.component';
 
 const routes: Routes = [
-  { path: '', component: HomeComponent },
-  { path: 'tasks/:id', component: TaskListComponent },
-  { path: 'task/add', component: TaskFormComponent },
-  { path: 'task/edit', component: TaskFormComponent }
+  { path: '', redirectTo: 'lists/today', pathMatch: 'full' },
+  { path: 'lists/:listId', component: TaskListComponent },
+  { path: 'lists/:listId/new-task', component: TaskFormComponent },
+  { path: 'lists/:listId/task/:taskId/edit', component: TaskFormComponent },
 ];
 
 @NgModule({

@@ -1,9 +1,11 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { TaskService } from '../services/task.service';
 import { FormsModule,  } from '@angular/forms'
+import { Task } from '../interfaces/task.interface';
+
 @Component({
   selector: 'app-task-form',
   templateUrl: './task-form.component.html',
@@ -14,6 +16,7 @@ export class TaskFormComponent implements OnInit {
   isEdit: boolean = false;
   taskID: number = 0;
   list_id: number = 0;
+  task_id: number = 0;
 
   isSubmitted: boolean = false;
   errorMessage: string = '';
@@ -32,17 +35,26 @@ export class TaskFormComponent implements OnInit {
     complete: new FormControl(),
   });
 
-  constructor(private router: Router, private taskService: TaskService) {
+  constructor(private router: Router, private taskService: TaskService, private activatedRoute: ActivatedRoute) {
     this.isAdd = this.router.getCurrentNavigation()?.extras.state?.mode === 'add';
     this.isEdit = this.router.getCurrentNavigation()?.extras.state?.mode === 'edit';
-    this.taskID = +this.router.getCurrentNavigation()?.extras.state?.id;
-    this.list_id = +this.router.getCurrentNavigation()?.extras.state?.list_id;
 
-    if (this.taskID != null && this.taskID > 0) {
-      this.task$ = this.taskService.getTasksByID(this.taskID).subscribe(result => {
+    this.activatedRoute.params.subscribe(
+      (params: Params) => {
+        this.list_id = params['listId'];
+        this.task_id = params['taskId'];
+      }
+    )
+
+    if (this.task_id != null && this.task_id > 0) {
+
+      this.task$ = this.taskService.getTasksByID(this.task_id).subscribe(result => {
         this.taskForm.setValue({
-          name: result,
-          active: result
+          list_id: result.list_id,
+          name: result.name,
+          description: result.description,
+          deadline: result.deadline,
+          complete: result.complete,
         });
       });
     }
@@ -67,16 +79,16 @@ export class TaskFormComponent implements OnInit {
     if (this.isAdd) {
       this.postTask$ = this.taskService.postTask(this.taskForm.value).subscribe(result => {
                 //all went well
-                this.router.navigateByUrl("/tasks/" + this.list_id);
+                this.router.navigateByUrl("/lists/" + this.list_id);
               },
               error => {
                 this.errorMessage = error.message;
               });
     }
     if (this.isEdit) {
-      this.putTask$ = this.taskService.putTask(this.taskID, this.taskForm.value).subscribe(result => {
+      this.putTask$ = this.taskService.putTask(this.task_id, this.taskForm.value).subscribe(result => {
                 //all went well
-                this.router.navigateByUrl("/tasks/" + this.list_id);              },
+                this.router.navigateByUrl("/lists/" + this.list_id);              },
               error => {
                 this.errorMessage = error.message;
               });

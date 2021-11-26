@@ -19,124 +19,24 @@
     {
       "name": "fhhgdgh",
       "id": 5
+    },
+    {
+      "name": "NewList",
+      "id": 6
+    },
+    {
+      "name": "HangarBot [Dev]",
+      "id": 7
     }
   ],
   "tasks": [
     {
-      "name": "qsdf",
-      "id": 1
-    },
-    {
-      "id": 2,
-      "list_id": 1,
-      "name": "APT eindwerk",
+      "list_id": "2",
+      "name": "L2 Dummy task 1000",
       "description": "some comment",
       "deadline": "2021-11-13",
-      "complete": true
-    },
-    {
-      "id": 3,
-      "list_id": 1,
-      "name": "Professional Skills extra cursus",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": true
-    },
-    {
-      "id": 4,
-      "list_id": 1,
-      "name": "Flutter mobile app",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": false
-    },
-    {
-      "id": 6,
-      "list_id": 1,
-      "name": "Dummy task 6",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": false
-    },
-    {
-      "id": 7,
-      "list_id": 1,
-      "name": "Dummy task 7",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": false
-    },
-    {
-      "id": 8,
-      "list_id": 1,
-      "name": "Dummy task 8",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": false
-    },
-    {
-      "id": 9,
-      "list_id": 1,
-      "name": "Dummy task 9",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": false
-    },
-    {
-      "id": 10,
-      "list_id": 1,
-      "name": "Dummy task 10",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": false
-    },
-    {
-      "id": 11,
-      "list_id": 1,
-      "name": "Dummy task 11",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": false
-    },
-    {
-      "id": 1,
-      "list_id": 2,
-      "name": "L2 Angular project",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": false
-    },
-    {
-      "id": 2,
-      "list_id": 2,
-      "name": "L2 APT eindwerk",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": true
-    },
-    {
-      "id": 3,
-      "list_id": 2,
-      "name": "L2 Professional Skills extra cursus",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": true
-    },
-    {
-      "id": 4,
-      "list_id": 2,
-      "name": "L2 Flutter mobile app",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": false
-    },
-    {
-      "id": 5,
-      "list_id": 2,
-      "name": "L2 Dummy task 5",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": false
+      "complete": false,
+      "id": 5
     },
     {
       "id": 6,
@@ -147,12 +47,12 @@
       "complete": false
     },
     {
-      "id": 7,
-      "list_id": 2,
+      "list_id": "2",
       "name": "L2 Dummy task 7",
       "description": "some comment",
       "deadline": "2021-11-13",
-      "complete": false
+      "complete": false,
+      "id": 7
     },
     {
       "id": 8,
@@ -174,14 +74,6 @@
       "id": 10,
       "list_id": 2,
       "name": "L2 Dummy task 10",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": false
-    },
-    {
-      "id": 11,
-      "list_id": 2,
-      "name": "L2 Dummy task 11",
       "description": "some comment",
       "deadline": "2021-11-13",
       "complete": false
@@ -229,6 +121,62 @@
       "deadline": "3000-05-05",
       "complete": null,
       "id": 20
+    },
+    {
+      "list_id": 1,
+      "name": "School",
+      "description": "shdfjqshdf",
+      "deadline": "0050-05-05",
+      "complete": null,
+      "id": 21
+    },
+    {
+      "list_id": 1,
+      "name": "oneone",
+      "description": "oneone",
+      "deadline": "5000-05-05",
+      "complete": null,
+      "id": 22
+    },
+    {
+      "list_id": 5,
+      "name": "zefrz",
+      "description": "zaer",
+      "deadline": "0001-05-05",
+      "complete": null,
+      "id": 24
+    },
+    {
+      "list_id": 6,
+      "name": "zear",
+      "description": "",
+      "deadline": "",
+      "complete": null,
+      "id": 25
+    },
+    {
+      "list_id": "1",
+      "name": "zearzera",
+      "description": "",
+      "deadline": "",
+      "complete": null,
+      "id": 28
+    },
+    {
+      "list_id": "4",
+      "name": "nedescc",
+      "description": "qsdfqsf",
+      "deadline": "",
+      "complete": null,
+      "id": 30
+    },
+    {
+      "list_id": "3",
+      "name": "qsdf",
+      "description": "sqdf",
+      "deadline": "",
+      "complete": null,
+      "id": 31
     }
   ],
   "profile": {

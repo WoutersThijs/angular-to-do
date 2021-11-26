@@ -2,7 +2,7 @@ import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Observable, timer } from 'rxjs';
 import { switchMap } from 'rxjs/operators';
-import { List } from '../interfaces/list';
+import { List } from '../interfaces/list.interface';
 
 @Injectable({
   providedIn: 'root'

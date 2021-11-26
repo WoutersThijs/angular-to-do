@@ -1,7 +1,7 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
 import {Subscription} from 'rxjs';
-import {ActivatedRoute, Router} from '@angular/router';
-import {Task} from '../interfaces/task';
+import {ActivatedRoute, Params, Router} from '@angular/router';
+import {Task} from '../interfaces/task.interface';
 import {TaskService} from '../services/task.service';
 
 @Component({
@@ -14,7 +14,7 @@ export class TaskListComponent implements OnInit, OnDestroy {
   tasks$: Subscription = new Subscription();
   deleteTask$: Subscription = new Subscription();
 
-  list_id = 0;
+  list_id: number = 0;
 
   errorMessage: string = '';
 
@@ -24,9 +24,11 @@ export class TaskListComponent implements OnInit, OnDestroy {
   ngOnInit(): void {
     this.getTasks();
 
-    this.activatedRoute.params.subscribe(routeParams => {
-      this.list_id = routeParams.id
-    });
+    this.activatedRoute.params.subscribe(
+      (params: Params) => {
+        this.list_id = params['listId'];
+      }
+    )
   }
 
   ngOnDestroy(): void {
@@ -34,14 +36,14 @@ export class TaskListComponent implements OnInit, OnDestroy {
     this.deleteTask$.unsubscribe();
   }
 
-  add(list_id: number) {
+  add() {
     //Navigate to form in add mode
-    this.router.navigate(['task/add'], {state: {list_id: list_id,mode: 'add'}});
+    this.router.navigate(['lists/' + this.list_id + '/new-task'], {state: { mode: 'add'}});
   }
 
   edit(id: number) {
     //Navigate to form in edit mode
-    this.router.navigate(['task/edit'], {state: {id: id, mode: 'edit'}});
+    this.router.navigate(['lists/' + this.list_id + '/task/' + id + '/edit'], {state: { mode: 'edit'}});
   }
 
   delete(id: number) {
@@ -55,10 +57,13 @@ export class TaskListComponent implements OnInit, OnDestroy {
   }
 
   getTasks() {
-    this.activatedRoute.params.subscribe(routeParams => {
-      this.tasks$.unsubscribe();
-      this.tasks$ = this.taskService.getTasksByList(routeParams.id).subscribe(result => this.tasks = result);
-    });
+    this.activatedRoute.params.subscribe(
+      (params: Params) => {
+        this.tasks$.unsubscribe();
+        this.list_id = params['listId'];
+        this.tasks$ = this.taskService.getTasksByList(this.list_id).subscribe(result => this.tasks = result);
+      }
+    )
   }
 }
 

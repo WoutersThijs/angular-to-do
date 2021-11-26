@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import { Task } from '../interfaces/task';
+import { Task } from '../interfaces/task.interface';
 
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable, timer } from 'rxjs';
@@ -20,8 +20,8 @@ export class TaskService {
     return timer(1, 3000).pipe(switchMap(() => this.httpClient.get<Task[]>("http://localhost:3000/tasks?list_id=" + listID)));
   }
 
-  getTasksByID(taskID: number): Observable<Task[]> {
-    return timer(1, 3000).pipe(switchMap(() => this.httpClient.get<Task[]>("http://localhost:3000/tasks/" + taskID)));
+  getTasksByID(taskID: number): Observable<Task> {
+    return timer(1, 3000).pipe(switchMap(() => this.httpClient.get<Task>("http://localhost:3000/tasks/" + taskID)));
   }
 
   postTask(task: Task): Observable<Task> {

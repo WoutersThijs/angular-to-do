@@ -1,7 +1,7 @@
 <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
   {{errorMessage}}
 </div>
-<button type="button" class="btn btn-success addBtn" (click)="add(list_id)"><i class="fas fa-plus"></i> Add new status</button>
+<button type="button" class="btn btn-success addBtn" (click)="add()"><i class="fas fa-plus"></i> Add new status</button>
 <table class="table" *ngIf="tasks && tasks.length > 0">
   <thead>
   <tr>

@@ -4,25 +4,25 @@
 </div>
 <ul>
   <li>
-    <a [routerLink]="['/tasks/today']" routerLinkActive="selected">
+    <a [routerLink]="['/lists/today']" routerLinkActive="selected">
       <img src="assets/today.svg" alt="today" class="mr-4">
       <span class="links_name">Today</span>
     </a>
   </li>
   <li>
-    <a [routerLink]="['/tasks/this-week']" routerLinkActive="selected">
+    <a [routerLink]="['/lists/this-week']" routerLinkActive="selected">
       <img src="assets/week.svg" alt="today" class="mr-4">
       <span class="links_name">This week</span>
     </a>
   </li>
   <li>
-    <a [routerLink]="['/tasks/important']" routerLinkActive="selected">
+    <a [routerLink]="['/lists/important']" routerLinkActive="selected">
       <img src="assets/important.svg" alt="today" class="mr-4">
       <span class="links_name">Important</span>
     </a>
   </li>
   <li>
-    <a [routerLink]="['/tasks/trash']" routerLinkActive="selected">
+    <a [routerLink]="['/lists/trash']" routerLinkActive="selected">
       <img src="assets/trash.svg" alt="today" class="mr-4">
       <span class="links_name">Trash</span>
     </a>
@@ -31,7 +31,7 @@
 
 <ul id="custom">
   <li *ngFor="let list of (lists$ | async)">
-    <a [routerLink]="['/tasks/', list.id]" routerLinkActive="selected" (click)="showTasks(list.id)">
+    <a [routerLink]="['/lists/', list.id]" routerLinkActive="selected" (click)="showTasks(list.id)">
       <img src="assets/stream.svg" alt="today" class="mr-4">
       <span class="links_name">{{ list.name }}</span>
     </a>
