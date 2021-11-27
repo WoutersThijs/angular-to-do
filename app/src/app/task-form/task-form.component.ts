@@ -30,7 +30,6 @@ export class TaskFormComponent implements OnInit {
   taskForm = new FormGroup({
     list_id: new FormControl(''),
     name: new FormControl(''),
-    description: new FormControl(''),
     deadline: new FormControl(''),
     complete: new FormControl(),
   });
@@ -52,7 +51,6 @@ export class TaskFormComponent implements OnInit {
         this.taskForm.setValue({
           list_id: result.list_id,
           name: result.name,
-          description: result.description,
           deadline: result.deadline,
           complete: result.complete,
         });

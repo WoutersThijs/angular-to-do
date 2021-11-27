@@ -5,18 +5,20 @@
 <table class="table" *ngIf="tasks && tasks.length > 0">
   <thead>
   <tr>
+    <th scope="col">Complete</th>
     <th scope="col">Name</th>
-    <th scope="col">Active</th>
     <th scope="col">Actions</th>
+    <th scope="col">Deadline</th>
   </tr>
   </thead>
   <tbody>
-  <tr *ngFor="let task of tasks">
+  <tr *ngFor="let task of tasks" class="task col-12">
+    <td class="checkbox" (click)="complete(task.id, task.complete)"><img src="assets/checked.svg" alt="Checked" *ngIf="task.complete"><img src="assets/unchecked.svg" alt="Unchecked" *ngIf="!task.complete"></td>
     <td>{{task.name}}</td>
-    <td><i *ngIf="task.complete" class="fas fa-check"></i><i *ngIf="!task.complete" class="fas fa-times"></i></td>
-    <td>
-      <button type="button" class="btn btn-success" (click)="edit(task.id)"><i class="fas fa-edit"></i></button>
-      <button type="button" class="btn btn-danger" (click)="delete(task.id)"><i class="far fa-trash-alt"></i></button>
+    <td><span *ngIf="task.deadline">{{task.deadline}}</span><span *ngIf="!task.deadline">No deadline</span></td>
+    <td class="actions">
+      <button type="button" class="mr-3 bg-white" (click)="edit(task.id)"><i class="fas fa-edit"></i></button>
+      <button type="button" class="bg-white" (click)="delete(task.id)"><i class="far fa-trash-alt"></i></button>
     </td>
   </tr>
   </tbody>

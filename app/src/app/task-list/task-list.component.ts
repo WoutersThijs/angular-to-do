@@ -46,6 +46,17 @@ export class TaskListComponent implements OnInit, OnDestroy {
     this.router.navigate(['lists/' + this.list_id + '/task/' + id + '/edit'], {state: { mode: 'edit'}});
   }
 
+  complete(id: number, is_complete: boolean) {
+    if(is_complete){
+      this.taskService.completeTask(id, false).subscribe(() => {
+      })
+    } else {
+      this.taskService.completeTask(id, true).subscribe(() => {
+      })
+    }
+    this.getTasks();
+  }
+
   delete(id: number) {
     this.deleteTask$ = this.taskService.deleteTask(id).subscribe(result => {
       //all went well
