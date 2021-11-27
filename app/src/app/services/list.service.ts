@@ -25,4 +25,11 @@ export class ListService {
 
     return this.httpClient.post<List>("http://localhost:3000/lists", list, {headers: headers});
   }
+
+  putList(listID: number, list: List): Observable<List> {
+    let headers = new HttpHeaders();
+    headers = headers.set('Content-Type', 'application/json; charset=utf-8');
+
+    return this.httpClient.put<List>("http://localhost:3000/lists/" + listID, list, {headers: headers});
+  }
 }

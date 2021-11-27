@@ -31,14 +31,8 @@ export class SidemenuComponent implements OnInit {
     this.router.navigate(['/lists', id]);
   }
 
-  onSubmit(): void {
-    this.postList$ = this.listService.postList(this.listForm.value).subscribe(result => {
-      this.router.navigate(['/lists', result.id]);
-      this.lists$ = this.listService.getLists();
-      $('#name').val('')
-    },
-    error => {
-      this.errorMessage = error.message;
-    });
+  add() {
+    //Navigate to form in add mode
+    this.router.navigate(['new-list'], {state: { mode: 'add'}});
   }
 }

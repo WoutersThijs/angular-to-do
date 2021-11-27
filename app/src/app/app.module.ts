@@ -11,6 +11,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { TaskListComponent } from './task-list/task-list.component';
+import { ListFormComponent } from './list-form/list-form.component';
 
 @NgModule({
   declarations: [
@@ -19,7 +20,8 @@ import { TaskListComponent } from './task-list/task-list.component';
     HomeComponent,
     SidemenuComponent,
     TaskFormComponent,
-    TaskListComponent
+    TaskListComponent,
+    ListFormComponent
   ],
   imports: [
     BrowserModule,

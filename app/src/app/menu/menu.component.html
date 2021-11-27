@@ -1,15 +1,20 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="logo-details d-flex align-items-center justify-content-center">
-    <a href="#ddd"><i class="far fa-sun icon pr-2" id="sidebarCollapse" (click)="toggleSidemenu()"></i></a>
-    <div class="logo_name p-2">Today</div>
+      <div (click)="toggleSidemenu()">
+      <img src="assets/stream.svg" alt="today" class="mr-4" *ngIf="(list$ | async)?.category == '' || (list$ | async)?.category == 'blue' || (list$ | async)?.category == null">
+      <img src="assets/stream-red.svg" alt="today" class="mr-4" *ngIf="(list$ | async)?.category == 'red'">
+      <img src="assets/stream-green.svg" alt="today" class="mr-4" *ngIf="(list$ | async)?.category == 'green'">
+      <img src="assets/stream-purple.svg" alt="today" class="mr-4" *ngIf="(list$ | async)?.category == 'purple'">
+      </div>
+    <div class="logo_name p-2">{{ (list$ | async)?.name }}</div>
+    <div class="btn-group actions ml-2">
+      <button type="button" class="mr-3 bg-white" (click)="edit()"><i class="fas fa-edit"></i></button>
+      <button type="button" class="bg-white"><i class="far fa-trash-alt"></i></button>
+    </div>
   </div>
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <div class="d-flex align-items-center ml-auto">
-      <button class="btn btn-outline-primary mr-4">Add task</button>
-      <form class="form-inline my-2 my-lg-0 mr-4">
-        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
-      </form>
       <img src="/assets/profile_pic_temp.png" alt="Profile picture" id="profile_pic" class="img-fluid">
     </div>
   </div>

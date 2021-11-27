@@ -3,6 +3,7 @@ import {Subscription} from 'rxjs';
 import {ActivatedRoute, Params, Router} from '@angular/router';
 import {Task} from '../interfaces/task.interface';
 import {TaskService} from '../services/task.service';
+import { ListStateService } from '../services/list-state.service';
 
 @Component({
   selector: 'app-task-list',
@@ -18,7 +19,7 @@ export class TaskListComponent implements OnInit, OnDestroy {
 
   errorMessage: string = '';
 
-  constructor(private taskService: TaskService, private router: Router, private activatedRoute: ActivatedRoute) {
+  constructor(private taskService: TaskService, private listStateService: ListStateService, private router: Router, private activatedRoute: ActivatedRoute) {
   }
 
   ngOnInit(): void {
@@ -27,6 +28,7 @@ export class TaskListComponent implements OnInit, OnDestroy {
     this.activatedRoute.params.subscribe(
       (params: Params) => {
         this.list_id = params['listId'];
+        this.listStateService.updatePathParamState(params['listId'])
       }
     )
   }

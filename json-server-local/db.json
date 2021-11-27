@@ -10,29 +10,43 @@
     },
     {
       "name": "Test",
+      "category": "blue",
       "id": 3
     },
     {
-      "name": "Two",
+      "name": "Thijs 5",
+      "category": "green",
       "id": 4
+    },
+    {
+      "name": "bew",
+      "category": "purple",
+      "id": 5
+    },
+    {
+      "name": "qsdfff",
+      "category": "red",
+      "id": 6
+    },
+    {
+      "name": "Thijs 555",
+      "category": "red",
+      "id": 7
+    },
+    {
+      "name": "Test",
+      "category": "red",
+      "id": 8
     }
   ],
   "tasks": [
-    {
-      "list_id": "2",
-      "name": "L2 Dummy task 1000",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": true,
-      "id": 1
-    },
     {
       "id": 6,
       "list_id": 2,
       "name": "L2 Dummy task 6",
       "description": "some comment",
       "deadline": "2021-11-13",
-      "complete": true
+      "complete": false
     },
     {
       "list_id": "2",
@@ -146,7 +160,7 @@
       "name": "nedescc",
       "description": "qsdfqsf",
       "deadline": "",
-      "complete": null,
+      "complete": true,
       "id": 30
     },
     {

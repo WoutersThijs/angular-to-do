@@ -68,8 +68,13 @@
   }
 }
 
+button{
+  border: none !important;
+}
+
 .new_list_wrapper{
   margin: 1.75rem 2rem;
+  cursor: pointer;
 
   .new_list{
     width: 100%;
