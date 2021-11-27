@@ -1,0 +1,164 @@
+{
+  "lists": [
+    {
+      "id": 1,
+      "name": "School"
+    },
+    {
+      "id": 2,
+      "name": "Graphic design"
+    },
+    {
+      "name": "Test",
+      "id": 3
+    },
+    {
+      "name": "Two",
+      "id": 4
+    }
+  ],
+  "tasks": [
+    {
+      "list_id": "2",
+      "name": "L2 Dummy task 1000",
+      "description": "some comment",
+      "deadline": "2021-11-13",
+      "complete": true,
+      "id": 1
+    },
+    {
+      "id": 6,
+      "list_id": 2,
+      "name": "L2 Dummy task 6",
+      "description": "some comment",
+      "deadline": "2021-11-13",
+      "complete": true
+    },
+    {
+      "list_id": "2",
+      "name": "L2 Dummy task 7",
+      "description": "some comment",
+      "deadline": "2021-11-13",
+      "complete": true,
+      "id": 7
+    },
+    {
+      "id": 8,
+      "list_id": 2,
+      "name": "L2 Dummy task 8",
+      "description": "some comment",
+      "deadline": "2021-11-13",
+      "complete": false
+    },
+    {
+      "id": 9,
+      "list_id": 2,
+      "name": "L2 Dummy task 9",
+      "description": "some comment",
+      "deadline": "2021-11-13",
+      "complete": true
+    },
+    {
+      "id": 10,
+      "list_id": 2,
+      "name": "L2 Dummy task 10",
+      "description": "some comment",
+      "deadline": "2021-11-13",
+      "complete": false
+    },
+    {
+      "name": "Test",
+      "description": "Test",
+      "deadline": "2000-08-08",
+      "complete": null,
+      "id": 12
+    },
+    {
+      "name": "Test",
+      "description": "Test",
+      "deadline": "2021-12-05",
+      "complete": null,
+      "id": 13
+    },
+    {
+      "name": "Test",
+      "description": "Test",
+      "deadline": "2021-11-26",
+      "complete": null,
+      "id": 14
+    },
+    {
+      "name": "Thijs Wouters",
+      "description": "Test",
+      "deadline": "2021-11-26",
+      "complete": null,
+      "listID": 1,
+      "id": 15
+    },
+    {
+      "name": "Test",
+      "description": "Test",
+      "deadline": "2021-11-27",
+      "complete": null,
+      "listID": 1,
+      "id": 16
+    },
+    {
+      "name": "twotwo",
+      "description": "two",
+      "deadline": "3000-05-05",
+      "complete": null,
+      "id": 20
+    },
+    {
+      "list_id": "1",
+      "name": "School",
+      "deadline": "0050-05-05",
+      "complete": true,
+      "id": 21
+    },
+    {
+      "list_id": 1,
+      "name": "oneone",
+      "description": "oneone",
+      "deadline": "5000-05-05",
+      "complete": true,
+      "id": 22
+    },
+    {
+      "list_id": 5,
+      "name": "zefrz",
+      "description": "zaer",
+      "deadline": "0001-05-05",
+      "complete": null,
+      "id": 24
+    },
+    {
+      "list_id": 6,
+      "name": "zear",
+      "description": "",
+      "deadline": "",
+      "complete": null,
+      "id": 25
+    },
+    {
+      "list_id": "4",
+      "name": "nedescc",
+      "description": "qsdfqsf",
+      "deadline": "",
+      "complete": null,
+      "id": 30
+    },
+    {
+      "list_id": "3",
+      "name": "qsdf",
+      "description": "sqdf",
+      "deadline": "",
+      "complete": null,
+      "id": 31
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}

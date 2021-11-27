@@ -1,0 +1,23 @@
+tr.task{
+  background-color: #fff;
+
+  & > td.actions{
+    opacity: 0;
+  }
+
+  &:hover > td.actions{
+    opacity: 1;
+  }
+}
+
+button{
+  border: none;
+}
+
+input[type="checkbox"]:checked{
+  display: none;
+}
+
+td.checkbox{
+  cursor: pointer;
+}

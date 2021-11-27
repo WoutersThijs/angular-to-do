@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { List } from '../interfaces/list';
+import { List } from '../interfaces/list.interface';
 import { Observable, Subscription } from 'rxjs';
 import $ from 'jquery';
 import { Router } from '@angular/router';
@@ -28,12 +28,12 @@ export class SidemenuComponent implements OnInit {
   }
 
   showTasks(id: number) {
-    this.router.navigate(['/task', id]);
+    this.router.navigate(['/lists', id]);
   }
 
   onSubmit(): void {
     this.postList$ = this.listService.postList(this.listForm.value).subscribe(result => {
-      this.router.navigate(['/task', result.id]);
+      this.router.navigate(['/lists', result.id]);
       this.lists$ = this.listService.getLists();
       $('#name').val('')
     },

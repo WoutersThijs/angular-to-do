@@ -1,3 +1,12 @@
-<main>
-    <router-outlet></router-outlet>
-</main>
+<div class="wrapper open">
+  <app-sidemenu class="wrapper-sidemenu"></app-sidemenu>
+  <div class="wrapper-content">
+    <app-menu></app-menu>
+
+    <div class="row">
+      <div class="col-12">
+        <router-outlet></router-outlet>
+      </div>
+    </div>
+  </div>
+</div>
