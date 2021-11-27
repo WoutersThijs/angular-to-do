@@ -18,6 +18,10 @@ export class MenuComponent implements OnInit {
   pathParam!: Observable<string>;
   currentList: Subscription = new Subscription();
 
+  deleteList$: Subscription = new Subscription();
+
+  errorMessage: string = '';
+
   constructor(private listService: ListService, private listStateService: ListStateService ,private router: Router ,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
@@ -30,6 +34,17 @@ export class MenuComponent implements OnInit {
   edit() {
     //Navigate to form in edit mode
     this.router.navigate(['lists/' + this.list_id + '/edit'], {state: { mode: 'edit'}});
+  }
+
+  delete() {
+    console.log(this.list_id);
+
+    this.deleteList$ = this.listService.deleteList(this.list_id).subscribe(result => {
+      this.router.navigate(['lists/today']);
+    }, error => {
+      //error
+      this.errorMessage = error.message;
+    });
   }
 
   toggleSidemenu(){

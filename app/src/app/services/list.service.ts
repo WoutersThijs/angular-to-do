@@ -32,4 +32,8 @@ export class ListService {
 
     return this.httpClient.put<List>("http://localhost:3000/lists/" + listID, list, {headers: headers});
   }
+
+  deleteList(listID: number): Observable<List> {
+    return this.httpClient.delete<List>("http://localhost:3000/lists/" + listID);
+  }
 }
