@@ -1,23 +1,117 @@
-tr.task{
+a {
+  cursor: pointer;
+
+  &:hover {
+    color: #005eef;
+  }
+}
+
+i.action {
+  color: #95aac9 !important;
+}
+
+.list-wrap {
+  box-shadow: 0 0.75rem 1.5rem rgb(18 38 63 / 3%);
+  background-color: #fff;
+  margin-bottom: 3rem;
+  border: 1px solid #edf2f9;
+  border-bottom: none;
+
+  .row {
+    padding-top: 1.5rem;
+    padding-right: 2rem;
+  }
+
+  .list-wrapper{
+    &>.list_actions {
+      opacity: 0;
+    }
+
+    &:hover>.list_actions {
+      opacity: 1;
+    }
+  }
+
+  span.title {
+    padding: 0rem 1.75rem;
+  }
+}
+
+thead {
+  th {
+    background-color: #f9fbfd;
+    border: none;
+    padding: 1rem 1.75rem;
+    color: #95aac9;
+    text-transform: uppercase;
+    font-size: 0.875rem;
+    font-weight: 400;
+  }
+}
+
+tbody {
+  td {
+    border-color: #edf2f9;
+    padding: 1.25rem 1.75rem;
+
+    &:last-of-type {
+      text-align: right;
+    }
+  }
+}
+
+tr {
+  border: 1px solid #edf2f9;
+  width: 100vw !important;
+  background-color: #f9fbfd;
+}
+
+tr.task {
   background-color: #fff;
 
-  & > td.actions{
+  &>td.actions {
     opacity: 0;
   }
 
-  &:hover > td.actions{
+  &:hover>td.actions {
     opacity: 1;
   }
 }
 
-button{
+button {
   border: none;
 }
 
-input[type="checkbox"]:checked{
+input[type="checkbox"]:checked {
   display: none;
 }
 
-td.checkbox{
+td.checkbox {
   cursor: pointer;
+}
+
+@media(max-width: 992px){
+  tr.task {
+    &>td.actions {
+      opacity: 1;
+    }
+  }
+
+  .table thead{
+    width: 100%;
+  }
+
+  .table, .table tbody, .table tr, .table td{
+    display: block;
+    width: 100%;
+  }
+
+  .table tbody tr{
+    margin-bottom: 2rem;
+    box-shadow: 0 0.75rem 1.5rem rgb(18 38 63 / 3%);
+  }
+
+  .table tbody{
+    background-color: #f9fbfd;
+  }
 }

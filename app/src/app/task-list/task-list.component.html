@@ -1,25 +1,39 @@
 <div class="alert alert-danger" role="alert" *ngIf="errorMessage">
   {{errorMessage}}
 </div>
-<button type="button" class="btn btn-success addBtn" (click)="add()"><i class="fas fa-plus"></i> Add new status</button>
-<table class="table" *ngIf="tasks && tasks.length > 0">
-  <thead>
-  <tr>
-    <th scope="col">Complete</th>
-    <th scope="col">Name</th>
-    <th scope="col">Actions</th>
-    <th scope="col">Deadline</th>
-  </tr>
-  </thead>
-  <tbody>
-  <tr *ngFor="let task of tasks" class="task col-12">
-    <td class="checkbox" (click)="complete(task.id, task.complete)"><img src="assets/checked.svg" alt="Checked" *ngIf="task.complete"><img src="assets/unchecked.svg" alt="Unchecked" *ngIf="!task.complete"></td>
-    <td>{{task.name}}</td>
-    <td><span *ngIf="task.deadline">{{task.deadline}}</span><span *ngIf="!task.deadline">No deadline</span></td>
-    <td class="actions">
-      <button type="button" class="mr-3 bg-white" (click)="edit(task.id)"><i class="fas fa-edit"></i></button>
-      <button type="button" class="bg-white" (click)="delete(task.id)"><i class="far fa-trash-alt"></i></button>
-    </td>
-  </tr>
-  </tbody>
-</table>
+<div class="list-wrap">
+  <div class="row top-bar">
+    <div class="col-8 d-flex align-items-center list-wrapper">
+      <span class="title ml-2">{{ (list$ | async)?.name }}</span>
+      <div class="list_actions">
+        <button type="button" class="mr-3 bg-white" (click)="editList()"><i class="far fa-edit action"></i></button>
+        <button type="button" class="bg-white" (click)="deleteList()"><i class="far fa-trash-alt action"></i></button>
+      </div>
+    </div>
+    <div class="col-4 d-flex">
+      <a class="addBtn ml-auto" (click)="add()"><i class="fas fa-plus"></i> Add task</a>
+    </div>
+  </div>
+    <table class="table mt-4 mb-0" *ngIf="tasks && tasks.length > 0">
+      <thead>
+      <tr class="">
+        <th scope="col" (click)="sort('complete')">Complete&nbsp;<i class="fa fa-sort"></i></th>
+        <th scope="col" (click)="sort('name')">Name&nbsp;<i class="fa fa-sort"></i></th>
+        <th scope="col" (click)="sort('deadline')">Deadline&nbsp;<i class="fa fa-sort"></i></th>
+        <th scope="col"></th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr *ngFor="let task of tasks | orderBy: key: reverse" class="task">
+        <td class="checkbox" (click)="complete(task.id, task.complete)"><img src="assets/checked.svg" alt="Checked" *ngIf="task.complete">
+          <img src="assets/unchecked.svg" alt="Unchecked" *ngIf="!task.complete"></td>
+        <td>{{task.name}}</td>
+        <td><span *ngIf="task.deadline">{{task.deadline}}</span><span *ngIf="!task.deadline">No deadline</span></td>
+        <td class="actions">
+          <button type="button" class="mr-3 bg-white" (click)="editTask(task.id)"><i class="far fa-edit action"></i></button>
+          <button type="button" class="bg-white" (click)="deleteTask(task.id)"><i class="far fa-trash-alt action"></i></button>
+        </td>
+      </tr>
+      </tbody>
+    </table>
+  </div>

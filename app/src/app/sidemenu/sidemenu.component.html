@@ -1,8 +1,11 @@
 <div class="logo-details d-flex align-items-center justify-content-center mt-3">
   <i class="fas fa-tasks icon"></i>
+  <div class="toggle" (click)="toggleSidemenu()">
+    <div class="btn"><i class="fas fa-chevron-left fa-xs"></i></div>
+  </div>
   <div class="logo_name p-2">To Do</div>
 </div>
-<ul>
+<ul class="d-none">
   <li>
     <a [routerLink]="['/lists/today']" routerLinkActive="selected">
       <img src="assets/today.svg" alt="today" class="mr-4">
@@ -32,17 +35,20 @@
 <ul id="custom">
   <li *ngFor="let list of (lists$ | async)">
     <a [routerLink]="['/lists/', list.id]" routerLinkActive="selected" (click)="showTasks(list.id)">
-      <img src="assets/stream.svg" alt="today" class="mr-4">
+      <img src="assets/stream.svg" alt="today" class="mr-4" *ngIf="list.category == '' || list.category == 'blue' || list.category == null">
+      <img src="assets/stream-red.svg" alt="today" class="mr-4" *ngIf="list.category == 'red'">
+      <img src="assets/stream-green.svg" alt="today" class="mr-4" *ngIf="list.category == 'green'">
+      <img src="assets/stream-purple.svg" alt="today" class="mr-4" *ngIf="list.category == 'purple'">
+
       <span class="links_name">{{ list.name }}</span>
     </a>
   </li>
   <li>
-    <div class="d-flex new_list_wrapper">
-      <img src="assets/plus.svg" alt="today" class="mr-4">
-      <form (ngSubmit)="onSubmit()" [formGroup]="listForm">
-        <input class="new_list" placeholder="New list" type="text" formControlName="name" id="name"/>
-        <input type="submit" style="position: absolute; left: -9999px; width: 1px; height: 1px;" tabindex="-1" />
-      </form>
-    </div>
+    <button (click)="add()" class="bg-transparent">
+      <div class="d-flex new_list_wrapper">
+        <img src="assets/plus.svg" alt="today" class="mr-4">
+        <p class="text-white">New list</p>
+      </div>
+    </button>
   </li>
 </ul>

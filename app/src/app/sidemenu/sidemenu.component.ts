@@ -25,20 +25,39 @@ export class SidemenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.lists$ = this.listService.getLists();
+    if($('.wrapper').hasClass('open') && $(window).width()! < 992){
+      console.log("sddd")
+      $('.wrapper').removeClass('open');
+      $('.wrapper').addClass('closed');
+    }
+
+    $(window).resize(function(){
+      if($(window).width()! < 992){
+        if($('.wrapper').hasClass('open')){
+          console.log("sddd")
+          $('.wrapper').removeClass('open');
+          $('.wrapper').addClass('closed');
+        }
+      }
+     });
   }
 
   showTasks(id: number) {
     this.router.navigate(['/lists', id]);
   }
 
-  onSubmit(): void {
-    this.postList$ = this.listService.postList(this.listForm.value).subscribe(result => {
-      this.router.navigate(['/lists', result.id]);
-      this.lists$ = this.listService.getLists();
-      $('#name').val('')
-    },
-    error => {
-      this.errorMessage = error.message;
-    });
+  add() {
+    //Navigate to form in add mode
+    this.router.navigate(['new-list'], {state: { mode: 'add'}});
+  }
+
+  toggleSidemenu(){
+    if($('.wrapper').hasClass('open')){
+      $('.wrapper').removeClass('open');
+      $('.wrapper').addClass('closed');
+    } else {
+      $('.wrapper').removeClass('closed');
+      $('.wrapper').addClass('open');
+    }
   }
 }

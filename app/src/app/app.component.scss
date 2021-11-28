@@ -8,6 +8,12 @@ h1{
     .wrapper-content{
       margin-left: 250px;
     }
+
+    @media only screen and (max-width: 992px) {
+      .wrapper-content{
+        margin-left: 0;
+      }
+    }
   }
 
   &.closed{
@@ -20,7 +26,6 @@ h1{
     transition: all 0.5s ease;
 
     .row{
-      margin: 3rem;
       margin-bottom: 2rem;
     }
   }
