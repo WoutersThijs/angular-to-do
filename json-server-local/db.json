@@ -2,32 +2,16 @@
   "lists": [
     {
       "id": 1,
-      "name": "School"
+      "name": "School",
+      "category": "blue"
     },
     {
       "id": 2,
-      "name": "Graphic design"
-    },
-    {
-      "name": "Test",
-      "category": "blue",
-      "id": 3
-    },
-    {
-      "name": "Test",
-      "category": "red",
-      "id": 8
+      "name": "Graphic design",
+      "category": "blue"
     }
   ],
   "tasks": [
-    {
-      "id": 6,
-      "list_id": 2,
-      "name": "L2 Dummy task 6",
-      "description": "some comment",
-      "deadline": "2021-11-13",
-      "complete": true
-    },
     {
       "list_id": "2",
       "name": "L2 Dummy task 7",
@@ -116,7 +100,7 @@
       "name": "oneone",
       "description": "oneone",
       "deadline": "5000-05-05",
-      "complete": true,
+      "complete": false,
       "id": 22
     },
     {

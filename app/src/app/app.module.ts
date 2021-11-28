@@ -6,6 +6,7 @@ import { AppComponent } from './app.component';
 import { MenuComponent } from './menu/menu.component';
 import { SidemenuComponent } from './sidemenu/sidemenu.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { Ng2OrderModule } from 'ng2-order-pipe';
 
 import { HttpClientModule } from '@angular/common/http';
 import { TaskFormComponent } from './task-form/task-form.component';
@@ -26,7 +27,8 @@ import { ListFormComponent } from './list-form/list-form.component';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    Ng2OrderModule
   ],
   providers: [],
   bootstrap: [AppComponent]

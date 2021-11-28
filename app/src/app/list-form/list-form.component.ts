@@ -3,7 +3,6 @@ import { FormControl, FormGroup } from '@angular/forms';
 import { ActivatedRoute, Params, Router } from '@angular/router';
 import { Subscription } from 'rxjs';
 import { ListService } from '../services/list.service';
-import { TaskService } from '../services/task.service';
 
 @Component({
   selector: 'app-list-form',
@@ -24,7 +23,7 @@ export class ListFormComponent implements OnInit {
   putList$: Subscription = new Subscription();
 
   // reactive form
-  taskForm = new FormGroup({
+  listForm = new FormGroup({
     name: new FormControl(''),
     category: new FormControl(''),
   });
@@ -37,7 +36,6 @@ export class ListFormComponent implements OnInit {
       this.activatedRoute.params.subscribe(
         (params: Params) => {
           this.list_id = params['listId'];
-          console.log(params['listId'])
         }
       )
     }
@@ -45,7 +43,7 @@ export class ListFormComponent implements OnInit {
     if (this.list_id != null && this.list_id > 0) {
 
       this.list$ = this.listService.getListById(this.list_id).subscribe(result => {
-        this.taskForm.setValue({
+        this.listForm.setValue({
           name: result.name,
           category: result.category
         });
@@ -67,7 +65,7 @@ export class ListFormComponent implements OnInit {
 
 
     if (this.isAdd) {
-      this.postList$ = this.listService.postList(this.taskForm.value).subscribe(result => {
+      this.postList$ = this.listService.postList(this.listForm.value).subscribe(result => {
                 //all went well
                 this.router.navigateByUrl("/lists/" + result.id);
               },
@@ -76,7 +74,7 @@ export class ListFormComponent implements OnInit {
               });
     }
     if (this.isEdit) {
-      this.putList$ = this.listService.putList(this.list_id, this.taskForm.value).subscribe(result => {
+      this.putList$ = this.listService.putList(this.list_id, this.listForm.value).subscribe(result => {
                 //all went well
                 this.router.navigateByUrl("/lists/" + this.list_id);              },
               error => {
