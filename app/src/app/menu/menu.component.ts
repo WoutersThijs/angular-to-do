@@ -3,7 +3,6 @@ import { ActivatedRoute, NavigationEnd, Params, Router } from '@angular/router';
 import { Observable, Subscription } from 'rxjs';
 import { filter } from 'rxjs/operators';
 import { List } from '../interfaces/list.interface';
-import { ListStateService } from '../services/list-state.service';
 import { ListService } from '../services/list.service';
 
 @Component({
@@ -22,13 +21,9 @@ export class MenuComponent implements OnInit {
 
   errorMessage: string = '';
 
-  constructor(private listService: ListService, private listStateService: ListStateService ,private router: Router ,private activatedRoute: ActivatedRoute) { }
+  constructor(private listService: ListService ,private router: Router ,private activatedRoute: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.currentList = this.listStateService.pathParam.subscribe((result) => {
-      this.list$ = this.listService.getListById(parseInt(result));
-      this.list_id = parseInt(result);
-    });
   }
 
   edit() {

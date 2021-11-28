@@ -26,7 +26,7 @@
       "name": "L2 Dummy task 6",
       "description": "some comment",
       "deadline": "2021-11-13",
-      "complete": false
+      "complete": true
     },
     {
       "list_id": "2",
@@ -50,7 +50,7 @@
       "name": "L2 Dummy task 9",
       "description": "some comment",
       "deadline": "2021-11-13",
-      "complete": true
+      "complete": false
     },
     {
       "id": 10,
@@ -106,7 +106,7 @@
     },
     {
       "list_id": "1",
-      "name": "School",
+      "name": "Test",
       "deadline": "0050-05-05",
       "complete": true,
       "id": 21

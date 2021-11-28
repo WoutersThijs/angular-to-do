@@ -1,10 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
   <div class="logo-details d-flex align-items-center justify-content-center">
       <div (click)="toggleSidemenu()">
-      <img src="assets/stream.svg" alt="today" class="mr-4" *ngIf="(list$ | async)?.category == '' || (list$ | async)?.category == 'blue' || (list$ | async)?.category == null">
-      <img src="assets/stream-red.svg" alt="today" class="mr-4" *ngIf="(list$ | async)?.category == 'red'">
-      <img src="assets/stream-green.svg" alt="today" class="mr-4" *ngIf="(list$ | async)?.category == 'green'">
-      <img src="assets/stream-purple.svg" alt="today" class="mr-4" *ngIf="(list$ | async)?.category == 'purple'">
       </div>
     <div class="logo_name p-2">{{ (list$ | async)?.name }}</div>
     <div class="btn-group actions ml-2">

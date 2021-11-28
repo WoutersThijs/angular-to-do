@@ -32,9 +32,10 @@
    line-height: 1.5;
    color: #212529;
    text-align: left;
-   background-color: #EBF3FF !important;
+   background-color: #f9fbfd !important;
    overflow-x: hidden;
    overflow-y: overlay;
+   letter-spacing: 0.05em;
  }
 
  [tabindex="-1"]:focus:not(:focus-visible) {
