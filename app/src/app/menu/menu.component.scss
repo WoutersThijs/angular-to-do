@@ -14,16 +14,6 @@ nav{
     height: 100%;
     border-radius: 50%;
   }
-
-  .logo-details{
-    & > .actions{
-      opacity: 0;
-    }
-
-    &:hover > .actions{
-      opacity: 1;
-    }
-  }
 }
 
 button{

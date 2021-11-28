@@ -8,6 +8,12 @@ h1{
     .wrapper-content{
       margin-left: 250px;
     }
+
+    @media only screen and (max-width: 992px) {
+      .wrapper-content{
+        margin-left: 0;
+      }
+    }
   }
 
   &.closed{

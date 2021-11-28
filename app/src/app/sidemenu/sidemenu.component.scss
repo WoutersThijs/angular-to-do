@@ -9,6 +9,12 @@
     :host{
       margin-left: -250px;
     }
+
+    @media only screen and (max-width: 992px) {
+      :host{
+        margin-left: -250px;
+      }
+    }
   }
 }
 
@@ -22,6 +28,25 @@
   z-index: 99;
   transition: all 0.5s ease;
   min-height: 100vh;
+
+  .toggle{
+    position: absolute;
+    left: 235px;
+    top: 16px;
+
+    .btn{
+      border-radius: 12px;
+      background: #000307;
+      color: white;
+      height: 2rem;
+      width: 2rem;
+
+      i{
+        position: absolute;
+        bottom: 0.5rem;
+      }
+    }
+  }
 
   .logo-details {
     height: 60px;
@@ -91,19 +116,6 @@ button{
       outline: none;
     }
   }
-}
-
-.sidebar .logo-details #btn {
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  font-size: 22px;
-  transition: all 0.4s ease;
-  font-size: 23px;
-  text-align: right;
-  cursor: pointer;
-  transition: all 0.5s ease;
 }
 
 .sidebar i {

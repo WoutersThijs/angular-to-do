@@ -25,6 +25,21 @@ export class SidemenuComponent implements OnInit {
 
   ngOnInit(): void {
     this.lists$ = this.listService.getLists();
+    if($('.wrapper').hasClass('open') && $(window).width()! < 992){
+      console.log("sddd")
+      $('.wrapper').removeClass('open');
+      $('.wrapper').addClass('closed');
+    }
+
+    $(window).resize(function(){
+      if($(window).width()! < 992){
+        if($('.wrapper').hasClass('open')){
+          console.log("sddd")
+          $('.wrapper').removeClass('open');
+          $('.wrapper').addClass('closed');
+        }
+      }
+     });
   }
 
   showTasks(id: number) {
@@ -34,5 +49,15 @@ export class SidemenuComponent implements OnInit {
   add() {
     //Navigate to form in add mode
     this.router.navigate(['new-list'], {state: { mode: 'add'}});
+  }
+
+  toggleSidemenu(){
+    if($('.wrapper').hasClass('open')){
+      $('.wrapper').removeClass('open');
+      $('.wrapper').addClass('closed');
+    } else {
+      $('.wrapper').removeClass('closed');
+      $('.wrapper').addClass('open');
+    }
   }
 }

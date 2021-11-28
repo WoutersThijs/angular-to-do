@@ -41,14 +41,4 @@ export class MenuComponent implements OnInit {
       this.errorMessage = error.message;
     });
   }
-
-  toggleSidemenu(){
-    if($('.wrapper').hasClass('open')){
-      $('.wrapper').removeClass('open');
-      $('.wrapper').addClass('closed');
-    } else {
-      $('.wrapper').removeClass('closed');
-      $('.wrapper').addClass('open');
-    }
-  }
 }

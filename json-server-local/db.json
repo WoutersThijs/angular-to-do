@@ -6,15 +6,20 @@
       "category": "blue"
     },
     {
-      "id": 2,
       "name": "Graphic design",
-      "category": "blue"
+      "category": "blue",
+      "id": 2
+    },
+    {
+      "name": "Test",
+      "category": "blue",
+      "id": 3
     }
   ],
   "tasks": [
     {
       "list_id": "2",
-      "name": "L2 Dummy task 7",
+      "name": "L2 Dummy task A",
       "description": "some comment",
       "deadline": "2021-11-13",
       "complete": true,
@@ -23,23 +28,23 @@
     {
       "id": 8,
       "list_id": 2,
-      "name": "L2 Dummy task 8",
+      "name": "L2 Dummy task B",
       "description": "some comment",
       "deadline": "2021-11-13",
-      "complete": false
+      "complete": true
     },
     {
       "id": 9,
       "list_id": 2,
-      "name": "L2 Dummy task 9",
+      "name": "L2 Dummy task C",
       "description": "some comment",
       "deadline": "2021-11-13",
-      "complete": false
+      "complete": true
     },
     {
       "id": 10,
       "list_id": 2,
-      "name": "L2 Dummy task 10",
+      "name": "L2 Dummy task D",
       "description": "some comment",
       "deadline": "2021-11-13",
       "complete": false
