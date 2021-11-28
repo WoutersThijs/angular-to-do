@@ -14,7 +14,9 @@ import { FormControl, FormGroup } from '@angular/forms';
 export class SidemenuComponent implements OnInit {
   errorMessage: string = '';
 
-  lists$: Observable<List[]> = new Observable<List[]>();
+
+  lists: List[] = [];
+  lists$: Subscription = new Subscription();
   postList$: Subscription = new Subscription();
 
   listForm = new FormGroup({
@@ -24,7 +26,8 @@ export class SidemenuComponent implements OnInit {
   constructor(private listService: ListService, private router: Router) { }
 
   ngOnInit(): void {
-    this.lists$ = this.listService.getLists();
+    this.lists$ = this.listService.getLists().subscribe(result => this.lists = result);
+
     if($('.wrapper').hasClass('open') && $(window).width()! < 992){
       console.log("sddd")
       $('.wrapper').removeClass('open');

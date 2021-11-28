@@ -26,14 +26,17 @@ export class TaskListComponent implements OnInit, OnDestroy {
 
   ngOnInit(): void {
     this.getTasks();
-    this.list$ = this.listService.getListById(this.list_id);
 
-    this.activatedRoute.params.subscribe(
-      (params: Params) => {
-        this.list_id = params['listId'];
-        this.list$ = this.listService.getListById(this.list_id);
-      }
-    )
+    if(this.list_id != null){
+      this.list$ = this.listService.getListById(this.list_id);
+
+      this.activatedRoute.params.subscribe(
+        (params: Params) => {
+          this.list_id = params['listId'];
+          this.list$ = this.listService.getListById(this.list_id);
+        }
+      )
+    }
   }
 
   ngOnDestroy(): void {
@@ -78,8 +81,11 @@ export class TaskListComponent implements OnInit, OnDestroy {
         this.tasks$.unsubscribe();
         this.list_id = params['listId'];
 
-        this.tasks$ = this.taskService.getTasksByList(this.list_id).subscribe(result => this.tasks = result);
-
+        if(this.list_id == null){
+          this.tasks$ = this.taskService.getTodayTasks().subscribe(result => this.tasks = result);
+        } else {
+          this.tasks$ = this.taskService.getTasksByList(this.list_id).subscribe(result => this.tasks = result);
+        }
       }
     )
   }

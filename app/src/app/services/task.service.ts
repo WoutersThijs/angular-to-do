@@ -16,6 +16,12 @@ export class TaskService {
     return timer(1, 3000).pipe(switchMap(() => this.httpClient.get<Task[]>("http://localhost:3000/tasks")));
   }
 
+  getTodayTasks(): Observable<Task[]> {
+    let today_date = new Date(Date.now());
+    let date_str: string = today_date.getFullYear().toString() + '-' + (today_date.getMonth() + 1).toString() + '-' + today_date.getDate().toString();
+    return timer(1, 3000).pipe(switchMap(() => this.httpClient.get<Task[]>("http://localhost:3000/tasks?deadline=" + date_str)));
+  }
+
   getTasksByList(listID: number): Observable<Task[]> {
     return timer(1, 3000).pipe(switchMap(() => this.httpClient.get<Task[]>("http://localhost:3000/tasks?list_id=" + listID)));
   }

@@ -327,4 +327,9 @@
  [hidden] {
    display: none !important;
  }
+
+ button, button:focus, button:focus-visible{
+  border: none !important;
+  outline: none !important;
+}
  /*# sourceMappingURL=bootstrap-reboot.css.map */

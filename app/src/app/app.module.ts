@@ -12,6 +12,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { TaskFormComponent } from './task-form/task-form.component';
 import { TaskListComponent } from './task-list/task-list.component';
 import { ListFormComponent } from './list-form/list-form.component';
+import { ShortenListNamePipe } from './pipes/shorten-list-name.pipe';
 
 @NgModule({
   declarations: [
@@ -20,7 +21,8 @@ import { ListFormComponent } from './list-form/list-form.component';
     SidemenuComponent,
     TaskFormComponent,
     TaskListComponent,
-    ListFormComponent
+    ListFormComponent,
+    ShortenListNamePipe
   ],
   imports: [
     BrowserModule,

@@ -82,4 +82,8 @@ export class ListFormComponent implements OnInit {
               });
     }
   }
+
+  back(){
+    this.router.navigateByUrl("/lists/" + this.list_id);
+  }
 }
