@@ -7,6 +7,9 @@ import { TaskListComponent } from './task-list/task-list.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'lists/today', pathMatch: 'full' },
+  { path: 'lists/today', component: TaskListComponent },
+  { path: 'lists/this-week', component: TaskListComponent },
+  { path: 'lists/trash', component: TaskListComponent },
   { path: 'lists/:listId', component: TaskListComponent },
 
   { path: 'new-list', component: ListFormComponent },

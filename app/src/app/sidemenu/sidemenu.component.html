@@ -5,7 +5,7 @@
   </div>
   <div class="logo_name p-2">To Do</div>
 </div>
-<ul class="d-none">
+<ul>
   <li>
     <a [routerLink]="['/lists/today']" routerLinkActive="selected">
       <img src="assets/today.svg" alt="today" class="mr-4">
@@ -19,12 +19,6 @@
     </a>
   </li>
   <li>
-    <a [routerLink]="['/lists/important']" routerLinkActive="selected">
-      <img src="assets/important.svg" alt="today" class="mr-4">
-      <span class="links_name">Important</span>
-    </a>
-  </li>
-  <li>
     <a [routerLink]="['/lists/trash']" routerLinkActive="selected">
       <img src="assets/trash.svg" alt="today" class="mr-4">
       <span class="links_name">Trash</span>
@@ -33,14 +27,14 @@
 </ul>
 
 <ul id="custom">
-  <li *ngFor="let list of (lists$ | async)">
+  <li *ngFor="let list of lists">
     <a [routerLink]="['/lists/', list.id]" routerLinkActive="selected" (click)="showTasks(list.id)">
       <img src="assets/stream.svg" alt="today" class="mr-4" *ngIf="list.category == '' || list.category == 'blue' || list.category == null">
       <img src="assets/stream-red.svg" alt="today" class="mr-4" *ngIf="list.category == 'red'">
       <img src="assets/stream-green.svg" alt="today" class="mr-4" *ngIf="list.category == 'green'">
       <img src="assets/stream-purple.svg" alt="today" class="mr-4" *ngIf="list.category == 'purple'">
 
-      <span class="links_name">{{ list.name }}</span>
+      <span class="links_name">{{ list.name | shortenListName : 12 }}</span>
     </a>
   </li>
   <li>

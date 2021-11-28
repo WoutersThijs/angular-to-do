@@ -92,4 +92,8 @@ export class TaskFormComponent implements OnInit {
               });
     }
   }
+
+  back(){
+    this.router.navigateByUrl("/lists/" + this.list_id);
+  }
 }

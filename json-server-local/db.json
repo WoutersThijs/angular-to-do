@@ -11,8 +11,8 @@
       "id": 2
     },
     {
-      "name": "Test",
-      "category": "blue",
+      "name": "Testtt",
+      "category": "purple",
       "id": 3
     }
   ],
@@ -21,7 +21,7 @@
       "list_id": "2",
       "name": "L2 Dummy task A",
       "description": "some comment",
-      "deadline": "2021-11-13",
+      "deadline": "2021-11-28",
       "complete": true,
       "id": 7
     },
